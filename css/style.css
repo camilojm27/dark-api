@@ -1,0 +1,74 @@
+html {
+  font-size: 62.5%;
+  /*font-family: "Quicksand", sans-serif*/
+}
+
+:root {
+  /*----- Colores */
+  --black-color: #342e37;
+  --white-color: #fafffd;
+  --yellow-color: #f5bb00;
+  --red-color: #cc0000;
+  --blue-color: #004be0;
+
+  /*------ Tipografía */
+  --h1: 2.5rem;
+  --p: 3rem;
+
+  /*------ Espaciado */
+  --space: 10px;
+  --space-2: 20px;
+  /*------ Box shadow*/
+  --box: 0px 0 2px 1px #e6e5e9;
+}
+
+body {
+  background-color: #342e37;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #000;
+  min-height: 5vh;
+  margin: auto;
+  align-items: center;
+}
+
+nav img {
+  width: 10%;
+}
+
+nav ul {
+  display: flex;
+  font-size: var(--h1);
+}
+
+nav ul li {
+  padding-right: 3rem;
+  list-style: none;
+}
+nav a {
+  color: var(--yellow-color);
+  text-decoration: none;
+}
+
+.description {
+  height: 90vh;
+  padding: 3rem;
+  margin: auto;
+  text-align: justify;
+  background: url(/img/65-LNq8EF3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: var(--white-color);
+}
+.description p {
+  font-size: var(--p);
+  width: 70%;
+  margin: auto;
+  padding-top: 3rem;
+}
+/*----Fin nav*/
+
+/*Inicio -- */
