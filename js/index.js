@@ -1,4 +1,4 @@
-const API = "http://api.tvmaze.com/shows/17861/cast";
+const API = "https://api.tvmaze.com/shows/17861/cast";
 let SIZE_OF_PERSONA = 0;
 const fetchData = (url_api) => {
   return new Promise((resolve, reject) => {
