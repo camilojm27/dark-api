@@ -46,36 +46,35 @@ const getData = async (url_api) => {
 };
 
 const createPerson = (person_ID, personaje, img_src, nombre, alter_img) => {
-  done = false;
-  let currentDiv = document.getElementsByClassName("personas")[0];
+  let currentDiv = document.getElementsByClassName("personas")[0]; //We seach the personas conainer in the DOM
 
-  let newPerson = document.createElement("div");
-  newPerson.className = "persona";
+  let newPerson = document.createElement("div"); //We create the container for each individual person
+  newPerson.className = "persona"; //and asing the class
 
-  let nombre_personaje = document.createElement("h3");
-  nombre_personaje.id = `personaje-${person_ID}`;
-  nombre_personaje.textContent = personaje;
+  let nombre_personaje = document.createElement("h3"); //this is the name of the character
+  nombre_personaje.id = `personaje-${person_ID}`; //Put an ID
+  nombre_personaje.textContent = personaje; //Insert the name
 
-  newPerson.appendChild(nombre_personaje);
+  newPerson.appendChild(nombre_personaje); //then append each name to the persona container
 
-  let newImageContainer = document.createElement("div");
-  newImageContainer.className = "img_container";
+  let newImageContainer = document.createElement("div"); //Create an img container
+  newImageContainer.className = "img_container"; //Add a class for css
 
   let newImage = document.createElement("img");
   newImage.alt = "";
-  newImage.src = img_src;
+  newImage.src = img_src; //create the image and asing his source
 
-  newImage.addEventListener("mouseover", () => (newImage.src = alter_img));
-  newImageContainer.appendChild(newImage);
-  newPerson.appendChild(newImageContainer);
+  newImage.addEventListener("mouseover", () => (newImage.src = alter_img)); //Adds the effect at hover
+  newImageContainer.appendChild(newImage); //add the image to his container
+  newPerson.appendChild(newImageContainer); //add the container to the person
 
-  let newName = document.createElement("h4");
-  newName.id = `nombre-${person_ID}`;
-  newName.textContent = nombre;
-  newPerson.appendChild(newName);
+  let newName = document.createElement("h4"); //this is the real name of the person
+  newName.id = `nombre-${person_ID}`; //Asing and ID
+  newName.textContent = nombre; //puts his name
+  newPerson.appendChild(newName); //appends to his container
 
   //currentDiv.appendChild(newPerson);
-  currentDiv.insertAdjacentElement("afterbegin", newPerson);
+  currentDiv.insertAdjacentElement("afterbegin", newPerson); //insert the object to the HTML Tree
 };
 
 getData(API);
