@@ -33,7 +33,7 @@ const getData = async (url_api) => {
         createPerson(
           index,
           name[index].character.name,
-          "img/unknow.jpg",
+          name[index].person.image.medium,
           name[index].person.name,
           name[index].person.image.medium
         );

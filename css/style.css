@@ -1,6 +1,15 @@
+@font-face {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  src: url(/fonts/GillSansStd.otf);
+}
+@font-face {
+  font-family: "VT323";
+  src: url(/fonts/VT323-Regular.ttf);
+}
+
 html {
   font-size: 62.5%;
-  /*font-family: "Quicksand", sans-serif*/
+  font-family: "Gill Sans", sans-serif;
 }
 p {
   margin-block-start: 0;
@@ -62,8 +71,10 @@ section {
   background-position: center;
 }
 .description {
-  height: 90vh;
+  height: 60vh;
+
   padding: 3rem;
+
   margin: auto;
   text-align: justify;
   background: url(/img/65-LNq8EF3.png);
@@ -107,6 +118,9 @@ section {
 .persona h3 {
   text-align: center;
 }
+.persona h4 {
+  text-align: center;
+}
 .persona img {
   height: 30vh;
 }
@@ -118,6 +132,7 @@ footer {
   text-align: center;
   background-color: black;
   color: white;
+  font-family: "VT323";
 }
 footer p {
   width: 100%;
