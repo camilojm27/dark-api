@@ -20,16 +20,33 @@ const getData = async (url_api) => {
     const name = await fetchData(url_api);
     SIZE_OF_PERSONA = name.length;
 
-    //document.getElementsByTagName("h3")[0].innerHTML = name[0].person.name;
-
-    var SIZE_OF_PERSONA = document.getElementsByTagName("h3").length;
+    for (let index = SIZE_OF_PERSONA - 1; index >= 0; index--) {
+      try {
+        createPerson(
+          index,
+          name[index].character.name,
+          name[index].character.image.medium,
+          name[index].person.name,
+          name[index].person.image.medium
+        );
+      } catch (error) {
+        createPerson(
+          index,
+          name[index].character.name,
+          "img/unknow.jpg",
+          name[index].person.name,
+          name[index].person.image.medium
+        );
+      }
+    }
   } catch (error) {
     console.error(error);
     alert(error);
   }
 };
 
-const createPerson = (person_ID) => {
+const createPerson = (person_ID, personaje, img_src, nombre, alter_img) => {
+  done = false;
   let currentDiv = document.getElementsByClassName("personas")[0];
 
   let newPerson = document.createElement("div");
@@ -37,6 +54,7 @@ const createPerson = (person_ID) => {
 
   let nombre_personaje = document.createElement("h3");
   nombre_personaje.id = `personaje-${person_ID}`;
+  nombre_personaje.textContent = personaje;
 
   newPerson.appendChild(nombre_personaje);
 
@@ -44,12 +62,16 @@ const createPerson = (person_ID) => {
   newImageContainer.className = "img_container";
 
   let newImage = document.createElement("img");
+  newImage.alt = "";
+  newImage.src = img_src;
 
+  newImage.addEventListener("mouseover", () => (newImage.src = alter_img));
   newImageContainer.appendChild(newImage);
   newPerson.appendChild(newImageContainer);
 
   let newName = document.createElement("h4");
   newName.id = `nombre-${person_ID}`;
+  newName.textContent = nombre;
   newPerson.appendChild(newName);
 
   //currentDiv.appendChild(newPerson);
@@ -58,10 +80,4 @@ const createPerson = (person_ID) => {
 
 getData(API);
 
-const insertPersons = (SIZE_OF_PERSONA) => {
-  for (let index = 0; index < SIZE_OF_PERSONA; index++) {
-    createPerson(index);
-  }
-};
-
-insertPersons(50);
+//insertPersons(50);
